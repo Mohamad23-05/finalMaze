@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class ButtonManger : MonoBehaviour
 {
-        public void QuitGame()
+    public void QuitGame()
     {
         Application.Quit();
         Debug.Log("QuitGame");
@@ -47,5 +49,12 @@ public class ButtonManger : MonoBehaviour
         {
             Answers.SetActive(true);
         }
+    }        
+    public void Score()
+    {
+        // Increment the score value
+        Debug.Log("score is " + ScoreScript.scoreValue.ToString());
+        ScoreScript.scoreValue += 3;
     }
+
 }
