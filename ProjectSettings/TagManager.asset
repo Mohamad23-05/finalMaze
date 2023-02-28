@@ -8,6 +8,8 @@ TagManager:
   - Panel
   - Answer
   - Point
+  - CharWahl
+  - PlayerFrau
   layers:
   - Default
   - TransparentFX

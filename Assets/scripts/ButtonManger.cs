@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class ButtonManger : MonoBehaviour
 {
+    //public GameObject player;
     public void QuitGame()
     {
         Application.Quit();
@@ -39,22 +40,42 @@ public class ButtonManger : MonoBehaviour
         if(Answers.gameObject.tag == "Answer")
         {
             Destroy(Answers.gameObject);
-            //showAnswer();
+           
+        }
+
+    }
+    public void destroyChar(GameObject CharWahl)
+    {
+        if(CharWahl.gameObject.tag == "CharWahl")
+        {
+            Destroy(CharWahl.gameObject);
         }
     }
-
     public void showAnswer(GameObject Answers)
     {
         if(Answers.gameObject.tag == "Answer")
         {
             Answers.SetActive(true);
         }
-    }        
+        if(Answers.gameObject.tag == "CharWahl")
+        {
+            Answers.SetActive(true);
+        }
+    }         
     public void Score()
     {
         // Increment the score value
         Debug.Log("score is " + ScoreScript.scoreValue.ToString());
         ScoreScript.scoreValue += 3;
     }
+
+
+
+public void ChangeImage(GameObject player)
+{
+    player.SetActive(false);
+}
+
+
 
 }

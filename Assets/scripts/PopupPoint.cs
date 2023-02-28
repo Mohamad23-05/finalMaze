@@ -18,5 +18,11 @@ public class PopupPoint : MonoBehaviour
             questions.SetActive(true);
             Debug.Log("Question is on");
         }    
+
+        if(player.tag == "PlayerFrau")
+        {
+            questions.SetActive(true);
+            Debug.Log("Question is on");
+        }    
     } 
 }
