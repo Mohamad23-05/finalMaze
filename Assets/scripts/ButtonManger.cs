@@ -71,9 +71,9 @@ public class ButtonManger : MonoBehaviour
 
 
 
-public void ChangeImage(GameObject player)
+public void ChangeScene()
 {
-    player.SetActive(false);
+    SceneManager.LoadScene("SceneFrau");
 }
 
 
