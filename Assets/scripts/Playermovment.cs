@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class Playermovment : MonoBehaviour
 {
-    public float _moveSpeed;
-    public Rigidbody2D _rigidBody;
-    private Vector2 _moveDirection;
-    [SerializeField] private FixedJoystick _joystick;
+    //public float _moveSpeed = 10f;
+    //public Rigidbody2D rb;
     public Vector3 startPosition = new Vector3(0,0,0);
+    private Rigidbody2D rb;
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        _rigidBody.velocity = new Vector2(_joystick.Horizontal * _moveSpeed, _joystick.Vertical * _moveSpeed);
+        float xInput = SimpleInput.GetAxis("Horizontal");
+        float yInput = SimpleInput.GetAxis("Vertical");
+        rb.velocity = new Vector2(xInput * 0.3f , yInput * 0.3f);
     }
+
+
 
     public void resetPosition()
     {
